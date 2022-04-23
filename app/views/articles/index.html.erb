@@ -1,0 +1,7 @@
+<h1>Articles</h1>
+<p><%= link_to '➕ add an article', new_article_path %></p>
+<% @articles.each do |article| %>
+<li><strong><%= article.title %></strong> - <em><%= article.content %></em>
+<%= link_to '📝', edit_article_path(article) %>
+<%= link_to '🗑️', article_path(article), method: :delete, data: {confirm: 'Are you sure?'} %></li>
+<% end %>
